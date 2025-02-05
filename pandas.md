@@ -42,10 +42,57 @@ df.head() # top 3
 df.head(5) # would set a specific amount of rows
 df.tail() # bottom 3
 ```
+### Loading a files:
+```python
+variablename = pd.read_csv('./path/file.csv') # CSV Format
+variablename = pd.read_parquet('./path/file.parquet') # PARQUET Format
+variablename = pd.read_excel('./path/file.xlsx', sheet_name="sn") # XLSX Format add sheet_name to pull specific sheet
+variablename = pd.read_feather('./path/file.feather') # FEATHER Format
+```
+### Saving back to a file:
+```python
+variablename = pd.to_csv('./path/file.csv') # CSV Format
+variablename = pd.to_parquet('./path/file.parquet') # PARQUET Format
+variablename = pd.to_excel('./path/file.xlsx', sheet_name="sn") # XLSX Format add sheet_name to pull specific sheet
+variablename = pd.to_feather('./path/file.csv') # FEATHER Format
+```
 
+### To see DataFrame:
+Put Name of DataFrame
 
+```python
+df
+```
 
+or
 
+```python
+print(df)
+```
+
+### Access specific data
+
+```python
+df.loc[#Rows, #Columns]
+# Examples:
+df.loc[[1,2,5]]
+df.loc[[0:3], ["Column Name","Column Name 2']]
+```
+
+```python
+df.iloc[#Index Value of Row, #Index Value of Column] 
+```
+
+```python
+df.at[#Row, #Column] # for a single cell
+df.iat[#Row, #Column # same but index numbers only
+```
+
+To set a Value 
+
+```python
+df.loc[#Row, #Column] = #Value
+```
 
 
 
